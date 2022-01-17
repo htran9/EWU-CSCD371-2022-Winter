@@ -9,7 +9,8 @@ namespace PrincessBrideTrivia
         {
             string filePath = GetFilePath();
             Question[] questions = LoadQuestions(filePath);
-
+            shuffleQuestions(questions);
+        
             int numberCorrect = 0;
             for (int i = 0; i < questions.Length; i++)
             {
@@ -21,10 +22,21 @@ namespace PrincessBrideTrivia
             }
             Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
         }
-
-        public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
+        public static void shuffleQuestions(Question[] questions)
         {
-            return (numberCorrectAnswers / numberOfQuestions * 100) + "%";
+            Random random = new Random();
+            for(int i = questions.Length - 1; i > 0; i--)
+            {
+                int index = random.Next(i + 1);
+                Question temp = questions[index];
+                questions[index] = questions[i];
+                questions[i] = temp;
+
+            }
+        }
+        public static string GetPercentCorrect(decimal numberCorrectAnswers, decimal numberOfQuestions)
+        {
+            return Math.Round(((numberCorrectAnswers / numberOfQuestions) * 100),0) + "%";
         }
 
         public static bool AskQuestion(Question question)
@@ -82,13 +94,13 @@ namespace PrincessBrideTrivia
 
                 string correctAnswerIndex = lines[lineIndex + 4];
 
-                Question question = new Question();
-                question.Text = questionText;
-                question.Answers = new string[3];
-                question.Answers[0] = answer1;
-                question.Answers[1] = answer2;
-                question.Answers[2] = answer3;
-                question.CorrectAnswerIndex = correctAnswerIndex;
+                questions[i] = new Question();
+                questions[i].Text = questionText;
+                questions[i].Answers = new string[3];
+                questions[i].Answers[0] = answer1;
+                questions[i].Answers[1] = answer2;
+                questions[i].Answers[2] = answer3;
+                questions[i].CorrectAnswerIndex = correctAnswerIndex;
             }
             return questions;
         }
