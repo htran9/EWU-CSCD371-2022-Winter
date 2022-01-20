@@ -9,8 +9,8 @@ namespace PrincessBrideTrivia
         {
             string filePath = GetFilePath();
             Question[] questions = LoadQuestions(filePath);
-            shuffleQuestions(questions);
-        
+            questions = ShuffleQuestions(questions);
+
             int numberCorrect = 0;
             for (int i = 0; i < questions.Length; i++)
             {
@@ -22,10 +22,10 @@ namespace PrincessBrideTrivia
             }
             Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
         }
-        public static void shuffleQuestions(Question[] questions)
+        public static Question[] ShuffleQuestions(Question[] questions)
         {
             Random random = new Random();
-            for(int i = questions.Length - 1; i > 0; i--)
+            for (int i = questions.Length - 1; i > 0; i--)
             {
                 int index = random.Next(i + 1);
                 Question temp = questions[index];
@@ -33,10 +33,11 @@ namespace PrincessBrideTrivia
                 questions[i] = temp;
 
             }
+            return questions;
         }
         public static string GetPercentCorrect(decimal numberCorrectAnswers, decimal numberOfQuestions)
         {
-            return Math.Round(((numberCorrectAnswers / numberOfQuestions) * 100),0) + "%";
+            return Math.Round(((numberCorrectAnswers / numberOfQuestions) * 100), 0) + "%";
         }
 
         public static bool AskQuestion(Question question)

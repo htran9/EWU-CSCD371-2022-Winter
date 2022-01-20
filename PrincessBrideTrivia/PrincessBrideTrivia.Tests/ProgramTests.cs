@@ -7,6 +7,41 @@ namespace PrincessBrideTrivia.Tests
     public class ProgramTests
     {
         [TestMethod]
+        public void TestShuffleQuestions_UsingRandom()
+        {
+            // Arrange
+            Question[] temp = new Question[4];
+            int k = 1;
+            for (int x = 0; x < temp.Length; x++)
+            {
+                temp[x] = new Question();
+                temp[x].Text = k.ToString();
+                k++;
+            }
+            bool loopFlag = false;
+            bool conditionFlag = false;
+            int counter = 0;
+
+            // Act
+            while (!loopFlag)
+            {
+                temp = Program.ShuffleQuestions(temp);
+                if (temp[0].Text.Equals("4") &&
+                    temp[1].Text.Equals("3") &&
+                    temp[2].Text.Equals("2") &&
+                    temp[3].Text.Equals("1"))
+                {
+                    loopFlag = true;
+                    conditionFlag = true;
+                }
+                if (counter > 500) { loopFlag = true; }
+                counter++;
+            }
+            // Assert
+            Assert.IsTrue(conditionFlag);
+        }
+
+        [TestMethod]
         public void LoadQuestions_RetrievesQuestionsFromFile()
         {
             string filePath = Path.GetRandomFileName();
@@ -60,7 +95,7 @@ namespace PrincessBrideTrivia.Tests
         [DataRow(5, 10, "50%")]
         [DataRow(1, 10, "10%")]
         [DataRow(0, 10, "0%")]
-        public void GetPercentCorrect_ReturnsExpectedPercentage(int numberOfCorrectGuesses, 
+        public void GetPercentCorrect_ReturnsExpectedPercentage(int numberOfCorrectGuesses,
             int numberOfQuestions, string expectedString)
         {
             // Arrange
