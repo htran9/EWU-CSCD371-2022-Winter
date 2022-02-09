@@ -36,7 +36,6 @@ public class Node<TValue>
     public void Clear()
     {
         Root.Next = this;
-
     }
     public Boolean Exists(TValue key)
     {
