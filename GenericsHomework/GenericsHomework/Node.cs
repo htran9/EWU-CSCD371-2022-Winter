@@ -41,6 +41,13 @@ public class Node<TValue>
     }
     public void Clear()
     {
+        // The garbage collecter picks up objects once they are no longer referenced,
+        // so removing the Next reference to a node would allow the garbage collector to
+        // delete it,and subsequently delete the node it WAS pointing to because that
+        // node no longer has a reference to it and etc...
+        // 
+        // Removing the Next reference effectively removes all items from a list except
+        // the current node, because the list is now only pointing to a single node
         Root.Next = this;
     }
     public Boolean Exists(TValue key)
