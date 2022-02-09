@@ -1,3 +1,4 @@
+using GenericsHomework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GenericsHomeworkTests;
@@ -8,6 +9,6 @@ public class NodeTests
     [TestMethod]
     public void TestMethod1()
     {
-        Node<string> newNode1 = new Node<string>("10");
+        Node<string> newNode1 = new ("10");
     }
 }

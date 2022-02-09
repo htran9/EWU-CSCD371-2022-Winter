@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericsHomework", "GenericsHomework\GenericsHomework.csproj", "{BC7FD676-3EF8-4224-B9EE-1B22F1A48202}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsHomeworkTests", "GenericsHomeworkTests\GenericsHomeworkTests.csproj", "{9456974A-1FD1-4BAB-991E-97A1E832856A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BC7FD676-3EF8-4224-B9EE-1B22F1A48202} = {BC7FD676-3EF8-4224-B9EE-1B22F1A48202}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
