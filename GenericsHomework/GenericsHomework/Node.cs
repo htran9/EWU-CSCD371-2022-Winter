@@ -11,6 +11,9 @@ namespace GenericsHomework
         public TValue Value { get; set; }
         public Node<TValue> Next { get; private set; }
 
+        public Node<TValue>? Head = null;
+        public Node<TValue>? Tail = null;
+
         public Node(TValue value)
         {
             Value = value;
@@ -18,10 +21,16 @@ namespace GenericsHomework
         }
         public void Append(TValue value)
         {
-            Next = new Node<TValue>(value);
-       
+            if(Head is null || Tail is null)
+            {
+                Head = this;
+                Tail = this;
+            }
+            Node<TValue> newNode = new Node<TValue>(value);
+            Tail.Next = newNode;
+            Tail = newNode;
+            Tail.Next = Head;
         }
-
 
         public override string? ToString()
         {
