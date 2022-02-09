@@ -11,6 +11,12 @@ public class Node<TValue>
         Next = this;
         Root = this;
     }
+    public Node(TValue value, Node<TValue> node)
+    {
+        Value = value;
+        Next = node;
+        Root = this;
+    }
     public void Append(TValue value)
     {
 
@@ -20,8 +26,8 @@ public class Node<TValue>
             throw new ArgumentException("Cannot add duplicate value");
         }
 
-        Node<TValue> newNode = new Node<TValue>(value);
-
+        Node<TValue> lastNode = GetLast();
+        lastNode.Next = new Node<TValue>(value, Root);
     }
 
     private Node<TValue> GetLast()
