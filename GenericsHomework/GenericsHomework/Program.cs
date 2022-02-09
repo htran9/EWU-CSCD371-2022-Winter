@@ -17,6 +17,7 @@ namespace GenericsHomework
             Console.WriteLine(newNode1.Next.Next);
             Console.WriteLine(newNode1.Next.Next.Next);
             Console.WriteLine(newNode1.Next.Next.Next.Next);
+            Console.WriteLine(newNode1.Next.Next.Next.Next.Next);
 
             //Console.WriteLine(newNode2.Next);
             //Console.WriteLine(newNode3.Value);
