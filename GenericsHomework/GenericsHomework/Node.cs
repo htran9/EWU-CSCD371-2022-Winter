@@ -59,6 +59,7 @@ public class Node<TValue>
             {
                 if (key.Equals(currentNode.Value))
                     return true;
+                currentNode = currentNode.Next;
             } while (currentNode.Next != Root);
         }
         return false;
