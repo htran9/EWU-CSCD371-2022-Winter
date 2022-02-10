@@ -56,5 +56,31 @@ public class NodeTests
         Assert.AreEqual<string>("3", lastNode.ToString()!);
     }
 
+    [TestMethod]
+    public void NodeClear_RemovesAllNonRootNodes()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        Assert.IsTrue(newNode.Exists(42.0));
+        Assert.IsTrue(newNode.Exists(92.9));
+        Assert.IsTrue(newNode.Exists(94.5));
+        Assert.IsTrue(newNode.Exists(103.5));
+        Assert.IsTrue(newNode.Exists(105.7));
 
+        newNode.Clear();
+        Assert.IsTrue(newNode.Exists(42.0));
+        Assert.IsFalse(newNode.Exists(92.9));
+        Assert.IsFalse(newNode.Exists(94.5));
+        Assert.IsFalse(newNode.Exists(103.5));
+        Assert.IsFalse(newNode.Exists(105.7));
+    }
+
+    public static Node<double> DoubleRadioStations()
+    {
+        Node<double> newNode = new(42.0);
+        newNode.Append(92.9);
+        newNode.Append(94.5);
+        newNode.Append(103.5);
+        newNode.Append(105.7);
+        return newNode;
+    }
 }
