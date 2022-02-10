@@ -7,8 +7,18 @@ namespace GenericsHomeworkTests;
 public class NodeTests
 {
     [TestMethod]
-    public void TestMethod1()
+    public void NodeTypeString_Value_test()
     {
-        Node<string> newNode1 = new ("10");
+        Node<string> newNode = new ("test");
+        if (newNode is not null && newNode.Value is not null)
+        {
+            Assert.AreEqual<string>("test", newNode.Value);
+        }
+    }
+
+    [TestMethod]
+    public void MyTestMethod()
+    {
+
     }
 }

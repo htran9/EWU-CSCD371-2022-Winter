@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System;
-namespace GenericsHomework
+﻿namespace GenericsHomework
 {
     public class Program
     {
@@ -18,21 +16,6 @@ namespace GenericsHomework
             Console.WriteLine(newNode1.Next.Next.Next);
             //Console.WriteLine(newNode1.Next.Next.Next.Next);
             //Console.WriteLine(newNode1.Next.Next.Next.Next.Next);
-
-            //Console.WriteLine(newNode2.Next);
-            //Console.WriteLine(newNode3.Value);
-            //Console.WriteLine(newNode3.Next);
-            //Console.WriteLine(newNode1.Next);
-            //Console.WriteLine(newNode2.Next);
-            /* bool temp = newNode1.Exists("35");
-             if(temp == true)
-             {
-                 Console.WriteLine("KEY FOUNDDD");
-             }
-             else
-             {
-                 Console.WriteLine("KEY NOT FOUND");
-             }*/
         }
     }
 }
