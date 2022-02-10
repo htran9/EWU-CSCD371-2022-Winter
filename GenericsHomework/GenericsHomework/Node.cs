@@ -33,7 +33,7 @@ public class Node<TValue>
     private Node<TValue> GetLast()
     {
         Node<TValue> currentNode = Root;
-        while(currentNode.Next != Root)
+        while (currentNode.Next != Root)
         {
             currentNode = currentNode.Next;
         }
@@ -67,11 +67,7 @@ public class Node<TValue>
 
     public override string? ToString()
     {
-        if (Value is null)
-        {
-            throw new ArgumentNullException(nameof(Value));
-        }
-        return Value.ToString();
+        return Convert.ToString(Value);
     }
 }
 
