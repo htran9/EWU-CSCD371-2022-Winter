@@ -27,4 +27,17 @@ public class NodeTests
     {
 
     }
+
+    [TestMethod]
+    public void NodeExists_ReturnTrue()
+    {
+        Node<string> newNode = new("10");
+        Assert.IsTrue(newNode.Exists("10"));
+    }
+    [TestMethod]
+    public void NodeExists_ReturnFalse()
+    {
+        Node<string> newNode = new("10");
+        Assert.IsFalse(newNode.Exists("12"));
+    }
 }
