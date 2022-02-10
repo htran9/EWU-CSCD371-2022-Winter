@@ -66,6 +66,7 @@ public class NodeTests
         newNode.Append("3");
         Node<string> lastNode = newNode.GetLast();
         Assert.AreEqual<string>("3", lastNode.ToString()!);
+        Assert.AreEqual<string>(newNode.ToString()!, lastNode.Next.ToString()!);
     }
 
     [TestMethod]
