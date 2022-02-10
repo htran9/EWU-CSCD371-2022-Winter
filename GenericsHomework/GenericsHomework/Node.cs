@@ -1,7 +1,7 @@
 ﻿namespace GenericsHomework;
-public class Node<TValue>
+public class Node<TValue> where TValue : notnull
 {
-    public TValue? Value { get; }
+    public TValue Value { get; }
     public Node<TValue> Next { get; private set; }
     public Node<TValue> Root;
 
@@ -52,16 +52,14 @@ public class Node<TValue>
     }
     public Boolean Exists(TValue key)
     {
-        if (Root is not null && key is not null)
+        Node<TValue> currentNode = Root;
+        do
         {
-            Node<TValue> currentNode = Root;
-            do
-            {
-                if (key.Equals(currentNode.Value))
-                    return true;
-                currentNode = currentNode.Next;
-            } while (currentNode != Root);
-        }
+            if (key.Equals(currentNode.Value))
+                return true;
+            currentNode = currentNode.Next;
+        } while (currentNode != Root);
+
         return false;
     }
 

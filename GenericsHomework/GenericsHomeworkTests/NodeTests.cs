@@ -1,5 +1,6 @@
 using GenericsHomework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace GenericsHomeworkTests;
 
@@ -10,10 +11,10 @@ public class NodeTests
     public void NodeTypeString_Value_Equals_test()
     {
         Node<string> newNode = new("test");
-        Assert.AreEqual<string>("test", newNode.Value!);
+        Assert.AreEqual<string>("test", newNode.Value);
 
         Node<string> newNode2 = new("test2", newNode);
-        Assert.AreEqual<string>("test2", newNode2.Value!);
+        Assert.AreEqual<string>("test2", newNode2.Value);
     }
 
     [TestMethod]
@@ -22,7 +23,7 @@ public class NodeTests
         Node<string> newNode = new("test");
         Assert.AreEqual(newNode, newNode.Root);
 
-        Node<string> newNode2 = new("test2", newNode!);
+        Node<string> newNode2 = new("test2", newNode);
         Assert.AreEqual(newNode2, newNode2.Root);
     }
 
@@ -32,6 +33,7 @@ public class NodeTests
         Node<string> newNode = new("10");
         Assert.IsTrue(newNode.Exists("10"));
     }
+
     [TestMethod]
     public void NodeExists_ReturnFalse()
     {
@@ -40,7 +42,17 @@ public class NodeTests
     }
 
     [TestMethod]
-    public void NodeAppend_ExistsAppended_True()
+    public void NodeAppend_DuplicateValue_throwsException()
+    {
+        Assert.ThrowsException<ArgumentException>(() =>
+        {
+            Node<double> newNode = DoubleRadioStations();
+            newNode.Append(42.0);
+        });
+    }
+
+    [TestMethod]
+    public void NodeAppend_AppendedExists_ReturnsTrue()
     {
         Node<string> newNode = new("first");
         newNode.Append("Second");
@@ -73,6 +85,8 @@ public class NodeTests
         Assert.IsFalse(newNode.Exists(103.5));
         Assert.IsFalse(newNode.Exists(105.7));
     }
+
+
 
     public static Node<double> DoubleRadioStations()
     {
