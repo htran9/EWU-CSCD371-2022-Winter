@@ -58,6 +58,7 @@ public class NodeTests
         newNode.Append("Second");
         Assert.IsTrue(newNode.Exists("Second"));
     }
+
     [TestMethod]
     public void NodeLast_ReturnLast()
     {
@@ -86,8 +87,6 @@ public class NodeTests
         Assert.IsFalse(newNode.Exists(103.5));
         Assert.IsFalse(newNode.Exists(105.7));
     }
-
-
 
     public static Node<double> DoubleRadioStations()
     {

@@ -1,5 +1,5 @@
 ﻿namespace GenericsHomework;
-public class Node<TValue> where TValue : notnull
+public class Node<TValue>
 {
     public TValue Value { get; }
     public Node<TValue> Next { get; private set; }
@@ -53,7 +53,12 @@ public class Node<TValue> where TValue : notnull
         Node<TValue> currentNode = Root;
         do
         {
-            if (key.Equals(currentNode.Value))
+            if(key is null)
+            {
+                if (currentNode.Value is null)
+                    return true;
+            }
+            else if (key.Equals(currentNode.Value))
                 return true;
             currentNode = currentNode.Next;
         } while (currentNode != Root);
