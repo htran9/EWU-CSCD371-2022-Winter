@@ -3,7 +3,7 @@ public class Node<TValue>
 {
     public TValue? Value { get; }
     public Node<TValue> Next { get; private set; }
-    private Node<TValue> Root;
+    public Node<TValue> Root;
 
     public Node(TValue value)
     {

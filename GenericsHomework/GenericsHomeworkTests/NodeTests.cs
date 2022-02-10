@@ -9,23 +9,43 @@ public class NodeTests
     [TestMethod]
     public void NodeTypeString_Value_Equals_test()
     {
-        Node<string> newNode = new ("test");
+        Node<string> newNode = new("test");
         if (newNode is not null && newNode.Value is not null)
         {
             Assert.AreEqual<string>("test", newNode.Value);
         }
-
-        Node<string> newNode2 = new("test2", newNode);
-        if (newNode is not null && newNode2.Value is not null)
+        else
         {
-            Assert.AreEqual<string>("test2", newNode2.Value);
+            Assert.Fail();
+        }
+        if (newNode is not null)
+        {
+            Node<string> newNode2 = new("test2", newNode);
+            if (newNode is not null && newNode2.Value is not null)
+            {
+                Assert.AreEqual<string>("test2", newNode2.Value);
+            }
+            else
+            {
+                Assert.Fail();
+            }
+        }
+        else
+        {
+            Assert.Fail();
         }
     }
 
     [TestMethod]
     public void NodeSetsRootToSelf_True()
     {
+        Node<string> newNode = new("test");
+        if (newNode is not null)
+        {
+            Assert.AreEqual(newNode, newNode.Root);
+        }
 
+        Node<string> newNode2 = new("test2", newNode);
     }
 
     [TestMethod]
