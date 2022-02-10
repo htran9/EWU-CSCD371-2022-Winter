@@ -15,10 +15,4 @@
 		<None Remove="desktop.ini" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Compile Update="Program.cs">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Compile>
-	</ItemGroup>
-
 </Project>
