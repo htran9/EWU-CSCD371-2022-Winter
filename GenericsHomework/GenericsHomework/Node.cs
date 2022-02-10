@@ -30,7 +30,7 @@ public class Node<TValue>
         lastNode.Next = new Node<TValue>(value, Root);
     }
 
-    private Node<TValue> GetLast()
+    public Node<TValue> GetLast()
     {
         Node<TValue> currentNode = Root;
         while (currentNode.Next != Root)

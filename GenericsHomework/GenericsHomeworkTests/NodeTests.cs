@@ -46,6 +46,15 @@ public class NodeTests
         newNode.Append("Second");
         Assert.IsTrue(newNode.Exists("Second"));
     }
+    [TestMethod]
+    public void NodeLast_ReturnLast()
+    {
+        Node<string> newNode = new("1");
+        newNode.Append("2");
+        newNode.Append("3");
+        Node<string> lastNode = newNode.GetLast();
+        Assert.AreEqual<string>("3", lastNode);
+    }
 
 
 }
