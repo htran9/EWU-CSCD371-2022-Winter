@@ -21,10 +21,10 @@ public class NodeTests
     public void NodeSetsRootToSelf_True()
     {
         Node<string> newNode = new("test");
-        Assert.AreEqual(newNode, newNode.Root);
+        Assert.IsTrue(newNode.Equals(newNode.Root));
 
         Node<string> newNode2 = new("test2", newNode);
-        Assert.AreEqual(newNode2, newNode2.Root);
+        Assert.IsTrue(newNode2.Equals(newNode2.Root));
     }
 
     [TestMethod]
