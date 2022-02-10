@@ -42,6 +42,18 @@ public class NodeTests
     }
 
     [TestMethod]
+    public void NodeExists_NullValue_ReturnTrue()
+    {
+        string empty = null!;
+        Node<string> newNode = new("start");
+        newNode.Append("middle");
+        newNode.Append(empty);
+        newNode.Append("end");
+
+        Assert.IsTrue(newNode.Exists(null!));
+    }
+
+    [TestMethod]
     public void NodeAppend_DuplicateValue_throwsException()
     {
         Assert.ThrowsException<ArgumentException>(() =>
