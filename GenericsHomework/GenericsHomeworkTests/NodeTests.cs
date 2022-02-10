@@ -10,42 +10,20 @@ public class NodeTests
     public void NodeTypeString_Value_Equals_test()
     {
         Node<string> newNode = new("test");
-        if (newNode is not null && newNode.Value is not null)
-        {
-            Assert.AreEqual<string>("test", newNode.Value);
-        }
-        else
-        {
-            Assert.Fail();
-        }
-        if (newNode is not null)
-        {
-            Node<string> newNode2 = new("test2", newNode);
-            if (newNode is not null && newNode2.Value is not null)
-            {
-                Assert.AreEqual<string>("test2", newNode2.Value);
-            }
-            else
-            {
-                Assert.Fail();
-            }
-        }
-        else
-        {
-            Assert.Fail();
-        }
+        Assert.AreEqual<string>("test", newNode.Value!);
+
+        Node<string> newNode2 = new("test2", newNode);
+        Assert.AreEqual<string>("test2", newNode2.Value!);
     }
 
     [TestMethod]
     public void NodeSetsRootToSelf_True()
     {
         Node<string> newNode = new("test");
-        if (newNode is not null)
-        {
-            Assert.AreEqual(newNode, newNode.Root);
-        }
+        Assert.AreEqual(newNode, newNode.Root);
 
-        Node<string> newNode2 = new("test2", newNode);
+        Node<string> newNode2 = new("test2", newNode!);
+        Assert.AreEqual(newNode2, newNode2.Root);
     }
 
     [TestMethod]
@@ -60,4 +38,14 @@ public class NodeTests
         Node<string> newNode = new("10");
         Assert.IsFalse(newNode.Exists("12"));
     }
+
+    [TestMethod]
+    public void NodeAppend_ExistsAppended_True()
+    {
+        Node<string> newNode = new("first");
+        newNode.Append("Second");
+        Assert.IsTrue(newNode.Exists("Second"));
+    }
+
+
 }
