@@ -1,5 +1,5 @@
 ﻿namespace GenericsHomework;
-public class Node<TValue>
+public class Node<TValue> where TValue : notnull
 {
     public TValue Value { get; }
     public Node<TValue> Next { get; private set; }
