@@ -56,11 +56,11 @@ public class NodeTests
     [TestMethod]
     public void NodeAppend_DuplicateValue_throwsException()
     {
-        Assert.ThrowsException<ArgumentException>(() =>
-        {
-            Node<double> newNode = DoubleRadioStations();
-            newNode.Append(42.0);
-        });
+        _ = Assert.ThrowsException<ArgumentException>(() =>
+          {
+              Node<double> newNode = DoubleRadioStations();
+              newNode.Append(42.0);
+          });
     }
 
     [TestMethod]
