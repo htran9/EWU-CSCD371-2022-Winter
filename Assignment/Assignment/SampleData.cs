@@ -10,10 +10,15 @@ namespace Assignment
         public static void Main(string[] args)
         {
             SampleData sampleData = new SampleData();
-            foreach (var item in sampleData.CsvRows)
+            //IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
+            //Console.WriteLine(temp);
+
+
+            foreach (var item in sampleData.GetUniqueSortedListOfStatesGivenCsvRows())
             {
                 Console.WriteLine(item);
             }
+
         }
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
@@ -25,15 +30,21 @@ namespace Assignment
                 StreetAddress = items[4],
                 City = items[5],
                 State = items[6],
-                Zip = int.Parse(items[7])}).Select(items => $"{ items.Id }, { items.FirstName }, { items.LastName }, { items.Email }, " +
+                Zip = int.Parse(items[7])})
+            .Select(items => $"{ items.Id }, { items.FirstName }, { items.LastName }, { items.Email }, " +
                 $"{ items.StreetAddress }, { items.City }, { items.State }, { items.Zip }");
 
         // 2.
-        public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows() 
-            => throw new NotImplementedException();
+        public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows()
+        {
+            IEnumerable<string> distinctState = CsvRows.Where(line => !string.IsNullOrWhiteSpace(line)).Select(line => line.Split(','))
+                .Select(x => x[6]).OrderBy(x => x).Distinct();
+            return distinctState;
+        }
 
-        // 3.
-        public string GetAggregateSortedListOfStatesUsingCsvRows()
+
+// 3.
+public string GetAggregateSortedListOfStatesUsingCsvRows()
             => throw new NotImplementedException();
 
         // 4.
