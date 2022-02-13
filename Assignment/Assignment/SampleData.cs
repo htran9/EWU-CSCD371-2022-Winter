@@ -1,12 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 
 namespace Assignment
 {
     public class SampleData : ISampleData
     {
+        public static void Main(string[] args)
+        {
+            SampleData sampleData = new SampleData();
+            foreach (var item in sampleData.CsvRows)
+            {
+                Console.WriteLine(item);
+            }
+        }
         // 1.
-        public IEnumerable<string> CsvRows => throw new NotImplementedException();
+        public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
+            .Select(items => new { 
+                Id = int.Parse(items[0]),
+                FirstName = items[1],
+                LastName = items[2],
+                Email = items[3],
+                StreetAddress = items[4],
+                City = items[5],
+                State = items[6],
+                Zip = int.Parse(items[7])}).Select(items => $"{ items.Id }, { items.FirstName }, { items.LastName }, { items.Email }, " +
+                $"{ items.StreetAddress }, { items.City }, { items.State }, { items.Zip }");
 
         // 2.
         public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows() 
