@@ -17,9 +17,7 @@ namespace Assignment
             {
                 Console.WriteLine(item.FirstName + "," + item.LastName + "," + item.Address.StreetAddress + "," + item.EmailAddress);
             }
-            
-
-
+ 
         }
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
