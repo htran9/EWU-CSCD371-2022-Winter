@@ -12,11 +12,12 @@ namespace Assignment
             SampleData sampleData = new SampleData();
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
             //Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection);
-            
-            foreach (var item in sampleData.GetUniqueSortedListOfStatesGivenCsvRows())
+            string s = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
+            Console.WriteLine(s);
+            /*foreach (var item in sampleData.GetAggregateSortedListOfStatesUsingCsvRows())
             {
                 Console.WriteLine(item);
-            }
+            }*/
 
         }
         // 1.
@@ -44,7 +45,7 @@ namespace Assignment
         {
             string[] state = GetUniqueSortedListOfStatesGivenCsvRows().Select(x => x).ToArray();
             
-            return string.Join(", ", state);
+            return string.Join(",", state);
             
         }
 
