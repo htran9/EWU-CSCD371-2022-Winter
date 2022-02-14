@@ -10,10 +10,9 @@ namespace Assignment
         public static void Main(string[] args)
         {
             SampleData sampleData = new SampleData();
-            //IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
-            //Console.WriteLine(temp);
-
-
+            IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
+            //Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection);
+            
             foreach (var item in sampleData.GetUniqueSortedListOfStatesGivenCsvRows())
             {
                 Console.WriteLine(item);
@@ -37,14 +36,17 @@ namespace Assignment
         // 2.
         public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows()
         {
-            IEnumerable<string> distinctState = CsvRows.Where(line => !string.IsNullOrWhiteSpace(line)).Select(line => line.Split(','))
-                .Select(x => x[6]).OrderBy(x => x).Distinct();
-            return distinctState;
+            return CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
         }
 
-
-// 3.
-        public string GetAggregateSortedListOfStatesUsingCsvRows() => throw new NotImplementedException();
+        // 3.
+        public string GetAggregateSortedListOfStatesUsingCsvRows()
+        {
+            string[] state = GetUniqueSortedListOfStatesGivenCsvRows().Select(x => x).ToArray();
+            
+            return string.Join(", ", state);
+            
+        }
 
         // 4.
         public IEnumerable<IPerson> People => throw new NotImplementedException();
