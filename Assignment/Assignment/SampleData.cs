@@ -13,11 +13,21 @@ namespace Assignment
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
             string s = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
             IEnumerable<IPerson> people = sampleData.People;
-            foreach (var item in people)
+            //IEnumerable<string> csv = sampleData.CsvRows.SelectSelectMany()
+            Predicate<string> filter = email;
+            static bool email(string email) => email.Contains("cstennine2@wired.com");
+            IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
+            Console.WriteLine(result.First());
+          
+            /*foreach (var item in people)
             {
-                Console.WriteLine(item.FirstName + "," + item.LastName + "," + item.Address.StreetAddress + "," + item.EmailAddress);
-            }
- 
+                Console.WriteLine(item.FirstName + "," + item.LastName + "," + item.EmailAddress + "," + item.Address.StreetAddress
+                    + "," + item.Address.City + "," + item.Address.State + "," + item.Address.Zip);
+            }*/
+            /*  foreach (var item in people)
+              {
+                  Console.WriteLine(item);
+              }*/
         }
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
@@ -48,13 +58,20 @@ namespace Assignment
 
         // 4.
         public IEnumerable<IPerson> People => CsvRows.Select(line => line.Split(',')).OrderBy(state => state[6]).ThenBy(city => city[5]).ThenBy(zip => zip[7])
-            .Select(person => new Person(person[1], person[2], new Address(person[4], person[5], person[6], person[7]), person[3]));
+            .Select(person => new Person(person[1], person[2], new Address(person[4], person[5], person[6], person[7]), person[3])).ToList();
 
-            
+
 
         // 5.
         public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(
-            Predicate<string> filter) => throw new NotImplementedException();
+            Predicate<string> filter) //=> throw new NotImplementedException();
+        {
+            
+            IEnumerable<IPerson> people = new SampleData().People;
+            //IEnumerable<string> test = people.Select(x => x.LastName).Where(x => x.Contains());
+            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
+            return result;
+        }
 
         // 6.
         public string GetAggregateListOfStatesGivenPeopleCollection(

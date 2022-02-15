@@ -45,10 +45,9 @@ namespace Assignment.Tests
         public void PeopleObject_EqualTo_CsvRowsSorted_IsTrue()
         {
             SampleData sampleData = new SampleData();
-            IEnumerable<string> temp = sampleData.CsvRows.OrderBy(state => state[6]).ThenBy(city => city[5]).ThenBy(zip => zip[7]).ToList();
+            IEnumerable<string> temp = sampleData.CsvRows.OrderBy(state => state[6]).ThenBy(city => city[5]).ThenBy(zip => zip[7]);
             IEnumerable<IPerson> people = sampleData.People;
-           
-            
+        
         }
     }
 }
