@@ -10,29 +10,33 @@ namespace Assignment
         public static void Main(string[] args)
         {
             SampleData sampleData = new SampleData();
+            ISampleData data = new SampleData();
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
             string s = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
             IEnumerable<IPerson> people = sampleData.People;
             IEnumerable<string> csv = sampleData.CsvRows;
             Predicate<string> filter = email;
-            static bool email(string email) => email.Contains("jdaneluttim@jimdo.com");
+            static bool email(string email) => email.Contains("jdaneltim@jimdo.com");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
             //Console.WriteLine(result.First());
-            //Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection(people));
-
+            //Console.WriteLine(result.First());
+            //Console.WriteLine(sampleData.GetAggregateSortedListOfStatesUsingCsvRows());
             /*foreach (var item in people)
             {
                 Console.WriteLine(item.FirstName + "," + item.LastName + "," + item.EmailAddress + "," + item.Address.StreetAddress
                     + "," + item.Address.City + "," + item.Address.State + "," + item.Address.Zip);
             }*/
-            foreach (var item in result)
+            foreach (var item in csv)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item);
             }
-        }
+
+        }// END MAIN
+
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
-            .Select(items => new {
+            .Select(items => new
+            {
                 Id = int.Parse(items[0]),
                 FirstName = items[1],
                 LastName = items[2],
@@ -40,9 +44,10 @@ namespace Assignment
                 StreetAddress = items[4],
                 City = items[5],
                 State = items[6],
-                Zip = int.Parse(items[7]) })
-            .Select(items => $"{ items.Id }, { items.FirstName }, { items.LastName }, { items.Email }, " +
-                $"{ items.StreetAddress }, { items.City }, { items.State }, { items.Zip }");
+                Zip = int.Parse(items[7])
+            })
+            .Select(items => $"{ items.Id },{ items.FirstName },{ items.LastName },{ items.Email }," +
+                $"{ items.StreetAddress },{ items.City },{ items.State },{ items.Zip }");
 
         // 2.
         public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows()
@@ -67,10 +72,11 @@ namespace Assignment
         // 5.
         public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(Predicate<string> filter)
         {
-            
+
             IEnumerable<IPerson> people = new SampleData().People;
-            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim())) ;
+            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
             return result;
+
         }
 
         // 6.

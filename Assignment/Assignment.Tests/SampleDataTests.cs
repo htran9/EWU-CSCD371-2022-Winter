@@ -25,14 +25,14 @@ namespace Assignment.Tests
         public void GetUniqueSortedListOfState_AscendingOrder_IsTrue()
         {
             IEnumerable<string> temp = new SampleData().GetUniqueSortedListOfStatesGivenCsvRows();
-            IEnumerable<string> ascOrder = temp.OrderBy(x => x);
-            Assert.IsTrue(temp.SequenceEqual(ascOrder));
+            IEnumerable<string> temp2 = new SampleData().CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
+            Assert.IsTrue(temp.SequenceEqual(temp2));
 
         }
         [TestMethod]
         public void GetAggregateSortedList_ConvertToString_Success()
         {
-            string tempString = " AL, AZ, CA, DC, FL, GA, IN, KS, LA, MD, MN, MO, MT, NC, NE, NH, NV, NY, OR, PA, SC, TN, TX, UT, VA, WA, WV";
+            string tempString = "AL,AZ,CA,DC,FL,GA,IN,KS,LA,MD,MN,MO,MT,NC,NE,NH,NV,NY,OR,PA,SC,TN,TX,UT,VA,WA,WV";
             string actualString = new SampleData().GetAggregateSortedListOfStatesUsingCsvRows();
             Assert.IsTrue(tempString.Equals(actualString));
         }
