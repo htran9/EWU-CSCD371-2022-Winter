@@ -13,22 +13,22 @@ namespace Assignment
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
             string s = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
             IEnumerable<IPerson> people = sampleData.People;
-            //IEnumerable<string> csv = sampleData.CsvRows.SelectSelectMany()
+            IEnumerable<string> csv = sampleData.CsvRows;
             Predicate<string> filter = email;
-            static bool email(string email) => email.Contains("cstnine2@wired.com");
+            static bool email(string email) => email.Contains("jdaneluttim@jimdo.com");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
             //Console.WriteLine(result.First());
-            Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection(people));
-          
+            //Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection(people));
+
             /*foreach (var item in people)
             {
                 Console.WriteLine(item.FirstName + "," + item.LastName + "," + item.EmailAddress + "," + item.Address.StreetAddress
                     + "," + item.Address.City + "," + item.Address.State + "," + item.Address.Zip);
             }*/
-            /*  foreach (var item in people)
-              {
-                  Console.WriteLine(item);
-              }*/
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.ToString());
+            }
         }
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
@@ -69,7 +69,7 @@ namespace Assignment
         {
             
             IEnumerable<IPerson> people = new SampleData().People;
-            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim())).ToList();
+            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim())) ;
             return result;
         }
 
