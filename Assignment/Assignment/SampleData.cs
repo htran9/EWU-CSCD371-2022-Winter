@@ -15,9 +15,10 @@ namespace Assignment
             IEnumerable<IPerson> people = sampleData.People;
             //IEnumerable<string> csv = sampleData.CsvRows.SelectSelectMany()
             Predicate<string> filter = email;
-            static bool email(string email) => email.Contains("cstennine2@wired.com");
+            static bool email(string email) => email.Contains("cstnine2@wired.com");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
-            Console.WriteLine(result.First());
+            //Console.WriteLine(result.First());
+            Console.WriteLine(sampleData.GetAggregateListOfStatesGivenPeopleCollection(people));
           
             /*foreach (var item in people)
             {
@@ -57,24 +58,26 @@ namespace Assignment
         }
 
         // 4.
+        // -----Not yet tested-----. 
         public IEnumerable<IPerson> People => CsvRows.Select(line => line.Split(',')).OrderBy(state => state[6]).ThenBy(city => city[5]).ThenBy(zip => zip[7])
             .Select(person => new Person(person[1], person[2], new Address(person[4], person[5], person[6], person[7]), person[3])).ToList();
 
 
 
         // 5.
-        public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(
-            Predicate<string> filter) //=> throw new NotImplementedException();
+        public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(Predicate<string> filter)
         {
             
             IEnumerable<IPerson> people = new SampleData().People;
-            //IEnumerable<string> test = people.Select(x => x.LastName).Where(x => x.Contains());
-            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
+            IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim())).ToList();
             return result;
         }
 
         // 6.
-        public string GetAggregateListOfStatesGivenPeopleCollection(
-            IEnumerable<IPerson> people) => throw new NotImplementedException();
+        public string GetAggregateListOfStatesGivenPeopleCollection(IEnumerable<IPerson> people)
+        {
+            string uniqueStateFromPeople = people.Select(x => x.Address.State).Distinct().Aggregate((a, b) => a + ',' + b);
+            return uniqueStateFromPeople;
+        }
     }
 }

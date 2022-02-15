@@ -49,5 +49,10 @@ namespace Assignment.Tests
             IEnumerable<IPerson> people = sampleData.People;
         
         }
+        [TestMethod]
+        public void People_FilterByEmail_ReturnFirstLastName()
+        {
+
+        }
     }
 }
