@@ -58,7 +58,7 @@ namespace Assignment.Tests
             Predicate<string> filter = email;
             static bool email(string email) => email.Contains("pjenyns0@state.gov");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
-            
+
             var temp = ("Priscilla", "Jenyns");
             Console.WriteLine(result.First().Item1);
 

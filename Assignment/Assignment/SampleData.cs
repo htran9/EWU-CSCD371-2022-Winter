@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-
-namespace Assignment
+﻿namespace Assignment
 {
     public class SampleData : ISampleData
     {
@@ -33,6 +28,8 @@ namespace Assignment
 
         }// END MAIN
 
+        // maybe change the way the filepath is found
+        // system.reflection.assembly.getexecutingassembly().Location
         // 1.
         public IEnumerable<string> CsvRows => File.ReadAllLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line.Split(','))
             .Select(items => new
