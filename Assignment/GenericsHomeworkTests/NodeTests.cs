@@ -113,9 +113,7 @@ public class NodeTests
             stationsTest[count] = item.Value;
             count++;
         }
-            //Assert.AreEqual<double[]>(stationsTest, stationsCorrect);
-        Assert.IsTrue(Enumerable.SequenceEqual(stationsTest, stationsCorrect));
-        Assert.IsTrue(stationsTest.SequenceEqual(stationsCorrect));
+        Assert.IsFalse(stationsTest.SequenceEqual(stationsCorrect));
 
     }
 
