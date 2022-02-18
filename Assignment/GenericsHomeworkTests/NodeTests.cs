@@ -1,6 +1,7 @@
 using GenericsHomework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 
 namespace GenericsHomeworkTests;
 
@@ -100,6 +101,24 @@ public class NodeTests
         Assert.IsFalse(newNode.Exists(105.7));
     }
 
+    [TestMethod]
+    public void MyTestMethod()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        double[] stationsCorrect = new [] { 42.0, 92.9, 94.5, 103.5, 105.7 };
+        double[] stationsTest = new double[5];
+        int count = 0;
+        foreach(Node<double> item in newNode)
+        {
+            stationsTest[count] = item.Value;
+            count++;
+        }
+            //Assert.AreEqual<double[]>(stationsTest, stationsCorrect);
+        Assert.IsTrue(Enumerable.SequenceEqual(stationsTest, stationsCorrect));
+        Assert.IsTrue(stationsTest.SequenceEqual(stationsCorrect));
+
+    }
+
     public static Node<double> DoubleRadioStations()
     {
         Node<double> newNode = new(42.0);
@@ -109,4 +128,5 @@ public class NodeTests
         newNode.Append(105.7);
         return newNode;
     }
+
 }

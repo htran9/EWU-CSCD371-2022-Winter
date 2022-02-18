@@ -102,9 +102,7 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        throw new NotImplementedException();
-        // just call above method?
-        // call through cast, not a yeild return
+        return (IEnumerator) GetEnumerator();
     }
 }
 
