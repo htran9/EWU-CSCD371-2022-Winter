@@ -1,6 +1,7 @@
 using GenericsHomework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GenericsHomeworkTests;
@@ -102,7 +103,7 @@ public class NodeTests
     }
 
     [TestMethod]
-    public void MyTestMethod()
+    public void NodeIterator_ReturnCorrectValues()
     {
         Node<double> newNode = DoubleRadioStations();
         double[] stationsCorrect = new [] { 42.0, 92.9, 94.5, 103.5, 105.7 };
@@ -113,8 +114,45 @@ public class NodeTests
             stationsTest[count] = item.Value;
             count++;
         }
-        Assert.IsFalse(stationsTest.SequenceEqual(stationsCorrect));
+        Assert.IsTrue(stationsTest.SequenceEqual(stationsCorrect));
+    }
 
+    [TestMethod]
+    public void NodeChildItems_ReturnsAll()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        List<Node<double>> nodeList = newNode.ChildItems(6).ToList();
+        Assert.IsTrue(nodeList.Count == 5);
+        Assert.IsTrue(nodeList.Contains(newNode));
+        Assert.IsTrue(nodeList.Contains(newNode.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next.Next.Next));
+
+    }
+
+    [TestMethod]
+    public void NodeChildItems_ReturnsLessThanSpecifiedMaximum()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        List<Node<double>> nodeList = newNode.ChildItems(4).ToList();
+        Assert.IsTrue(nodeList.Count == 3);
+        Assert.IsTrue(nodeList.Contains(newNode));
+        Assert.IsTrue(nodeList.Contains(newNode.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next));
+    }
+
+    [TestMethod]
+    public void NodeChildItems_ReturnsUpToTotalItems()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        List<Node<double>> nodeList = newNode.ChildItems(10).ToList();
+        Assert.IsTrue(nodeList.Count == 5);
+        Assert.IsTrue(nodeList.Contains(newNode));
+        Assert.IsTrue(nodeList.Contains(newNode.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next.Next));
+        Assert.IsTrue(nodeList.Contains(newNode.Next.Next.Next.Next));
     }
 
     public static Node<double> DoubleRadioStations()

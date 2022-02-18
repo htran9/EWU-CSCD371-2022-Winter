@@ -73,15 +73,15 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
         return Convert.ToString(Value);
     }
 
-    public IEnumerable<TValue> ChildItems(int maximum) // i think this is what is needed for assignment5+6?
+    public IEnumerable<Node<TValue>> ChildItems(int maximum) // i think this is what is needed for assignment5+6?
     {
-        List<TValue> children = new();
+        List <Node<TValue>> children = new();
         Node<TValue> currentNode = Root;
 
         int counter = 1;
         do
         {
-            children.Add(currentNode.Value);
+            children.Add(currentNode);
             counter++;
             currentNode = currentNode.Next;
         } while (currentNode != Root && counter < maximum);
