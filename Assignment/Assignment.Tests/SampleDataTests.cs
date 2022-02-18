@@ -31,7 +31,18 @@ namespace Assignment.Tests
             Assert.IsFalse(beforeSkipFirstLine.Equals(firstLineCsvRows));
         }
         [TestMethod]
-        public void GetUniqueSortedListOfState_AscendingOrder_IsTrue()
+        public void GetUniqueSortedListOfStatesGivenCsvRows_Spokane_IsEqual()
+        {
+            List<string> notAddSpokaneAddress = sampleData.GetUniqueSortedListOfStatesGivenCsvRows().ToList();
+            List<string> spokaneAddresses = sampleData.CsvRows.ToList();
+            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,53 Grim Point,Spokane,WA,99022");
+            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,601 E Riverside Ave,Spokane,WA 99202");
+            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,1720 W 4th Ave Unit B,Spokane,WA 99201");
+            List<string> listAfterAddingAddresses = sampleData.GetUniqueSortedListOfStatesGivenCsvRows().ToList();
+            Assert.IsTrue(notAddSpokaneAddress.SequenceEqual(listAfterAddingAddresses));
+        }
+        [TestMethod]
+        public void GetUniqueSortedListOfStatesGivenCsvRows_AscendingOrder_IsTrue()
         {
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
             IEnumerable<string> temp2 = sampleData.CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
@@ -39,7 +50,7 @@ namespace Assignment.Tests
 
         }
         [TestMethod]
-        public void GetAggregateSortedList_ConvertToString_Success()
+        public void GetAggregateSortedListOfStatesUsingCsvRows_ConvertToString_Success()
         {
             string tempString = "AL,AZ,CA,DC,FL,GA,IN,KS,LA,MD,MN,MO,MT,NC,NE,NH,NV,NY,OR,PA,SC,TN,TX,UT,VA,WA,WV";
             string actualString = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
@@ -49,6 +60,11 @@ namespace Assignment.Tests
         public void PeopleObjectCreated_NotNull()
         {
             Assert.IsNotNull(sampleData.People);
+        }
+        [TestMethod]
+        public void AddressObjectCreated_NotNull()
+        {
+            Assert.IsNotNull(sampleData.People.First().Address);
         }
         [TestMethod]
         public void PeopleObject_EqualTo_CsvRowsSorted_IsTrue()
@@ -72,7 +88,7 @@ namespace Assignment.Tests
             Assert.IsTrue(people.SequenceEqual(csvSorted));
         }
         [TestMethod]
-        public void People_FilterByEmail_ReturnFirstLastName()
+        public void People_FilterByEmailAddress_ReturnFirstLastName()
         {
             Predicate<string> filter = email;
             static bool email(string email) => email.Contains("pjenyns0@state.gov");
@@ -84,7 +100,7 @@ namespace Assignment.Tests
             Assert.AreEqual(temp, (result.First().Item1, result.First().Item2));
         }
         [TestMethod]
-        public void GetAggregatedListGivenPeople_EqualTo_GetUniqueListGivenCsvRows_IsTrue()
+        public void GetAggregateListOfStatesGivenPeopleCollection_EqualTo_GetUniqueListGivenCsvRows_IsTrue()
         {
             string uniqueListCsvRows = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
             string aggregatedListPeople = sampleData.GetAggregateListOfStatesGivenPeopleCollection(sampleData.People);

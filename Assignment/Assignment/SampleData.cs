@@ -17,6 +17,7 @@
             string aggregatedpeople = sampleData.GetAggregateListOfStatesGivenPeopleCollection(people);
             Console.WriteLine(s);
             Console.WriteLine(aggregatedpeople);
+
             //Console.WriteLine(result.First());
             //Console.WriteLine(result.First());
             //Console.WriteLine(sampleData.GetAggregateSortedListOfStatesUsingCsvRows());
@@ -27,11 +28,11 @@
             }*/
             //List<string> tempList = sampleData.CsvRows.ToList();
             //Console.WriteLine(tempList[1]);
-           /* foreach (var item in people1)
+            foreach (var item in temp)
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine("-----------------------------------------------------------------------");
+           /* Console.WriteLine("-----------------------------------------------------------------------");
             foreach (var item in temptest)
             {
                 Console.WriteLine(item);
