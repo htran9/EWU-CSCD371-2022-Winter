@@ -35,9 +35,9 @@ namespace Assignment.Tests
         {
             List<string> notAddSpokaneAddress = sampleData.GetUniqueSortedListOfStatesGivenCsvRows().ToList();
             List<string> spokaneAddresses = sampleData.CsvRows.ToList();
-            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,53 Grim Point,Spokane,WA,99022");
-            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,601 E Riverside Ave,Spokane,WA 99202");
-            spokaneAddresses.Add("1,Priscilla,Jenyns,pjenyns0@state.gov,1720 W 4th Ave Unit B,Spokane,WA 99201");
+            spokaneAddresses.Add(" , , , ,53 Grim Point,Spokane,WA,99022");
+            spokaneAddresses.Add(" , , , ,601 E Riverside Ave,Spokane,WA 99202");
+            spokaneAddresses.Add(" , , , ,1720 W 4th Ave Unit B,Spokane,WA 99201");
             List<string> listAfterAddingAddresses = sampleData.GetUniqueSortedListOfStatesGivenCsvRows().ToList();
             Assert.IsTrue(notAddSpokaneAddress.SequenceEqual(listAfterAddingAddresses));
         }

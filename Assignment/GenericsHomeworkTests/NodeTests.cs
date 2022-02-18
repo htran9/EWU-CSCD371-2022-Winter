@@ -163,6 +163,15 @@ public class NodeTests
         Assert.IsNotNull(enumerator);
     }
 
+    [TestMethod]
+    public void NodeEnumerator()// probably need mock
+    {
+        Node<double> newNode = DoubleRadioStations();
+        var enumerator = newNode.GetEnumerator();
+        //Assert.AreEqual(0, enumerator.Current.Value);   
+
+    }
+
     public static Node<double> DoubleRadioStations()
     {
         Node<double> newNode = new(42.0);
@@ -172,5 +181,7 @@ public class NodeTests
         newNode.Append(105.7);
         return newNode;
     }
+
+
 
 }

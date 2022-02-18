@@ -59,9 +59,15 @@
         }
 
         // 4.
-        // -----Not yet tested-----. 
-        public IEnumerable<IPerson> People => _LazyCsvRows.Value.Select(line => line.Split(',')).OrderBy(state => state[6]).ThenBy(city => city[5]).ThenBy(zip => zip[7])
-            .Select(person => new Person(person[1], person[2], new Address(person[4], person[5], person[6], person[7]), person[3]));
+        // -----Not yet tested-----. LETS HAVE A CLOSER LOOK AT THIS
+        public IEnumerable<IPerson> People => _LazyCsvRows.Value.Select(line => line.Split(','))
+            .OrderBy(state => state[6])
+                .ThenBy(city => city[5])
+                .ThenBy(zip => zip[7])
+            .Select(
+                person => new Person(person[1], person[2], 
+                new Address(person[4], person[5], person[6], person[7]),
+                person[3]));
 
         
         // 5.

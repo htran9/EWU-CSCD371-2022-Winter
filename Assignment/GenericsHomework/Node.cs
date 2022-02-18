@@ -102,7 +102,8 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return (IEnumerator) GetEnumerator();
+        return (IEnumerator) GetEnumerator(); 
+ 
     }
 }
 
