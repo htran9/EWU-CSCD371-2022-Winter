@@ -14,7 +14,9 @@
             Predicate<string> filter = email;
             static bool email(string email) => email.Contains("jdaneltim@jimdo.com");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
-           
+            string aggregatedpeople = sampleData.GetAggregateListOfStatesGivenPeopleCollection(people);
+            Console.WriteLine(s);
+            Console.WriteLine(aggregatedpeople);
             //Console.WriteLine(result.First());
             //Console.WriteLine(result.First());
             //Console.WriteLine(sampleData.GetAggregateSortedListOfStatesUsingCsvRows());
@@ -68,7 +70,6 @@
             IEnumerable<IPerson> people = new SampleData().People;
             IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
             return result;
-
         }
 
         // 6.

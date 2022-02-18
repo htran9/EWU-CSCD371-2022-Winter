@@ -24,6 +24,13 @@ namespace Assignment.Tests
             Assert.AreEqual(50, temp.Count());
         }
         [TestMethod]
+        public void CsvRows_CompareFirstLineWithoutSkip_IsFalse()
+        {
+            string beforeSkipFirstLine = "Id,FirstName,LastName,Email,StreetAddress,City,State,Zip";
+            string firstLineCsvRows = sampleData.CsvRows.First();
+            Assert.IsFalse(beforeSkipFirstLine.Equals(firstLineCsvRows));
+        }
+        [TestMethod]
         public void GetUniqueSortedListOfState_AscendingOrder_IsTrue()
         {
             IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
@@ -67,7 +74,6 @@ namespace Assignment.Tests
         [TestMethod]
         public void People_FilterByEmail_ReturnFirstLastName()
         {
-            SampleData sampleData = new SampleData();
             Predicate<string> filter = email;
             static bool email(string email) => email.Contains("pjenyns0@state.gov");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
@@ -76,6 +82,13 @@ namespace Assignment.Tests
             Console.WriteLine(result.First().Item1);
 
             Assert.AreEqual(temp, (result.First().Item1, result.First().Item2));
+        }
+        [TestMethod]
+        public void GetAggregatedListGivenPeople_EqualTo_GetUniqueListGivenCsvRows_IsTrue()
+        {
+            string uniqueListCsvRows = sampleData.GetAggregateSortedListOfStatesUsingCsvRows();
+            string aggregatedListPeople = sampleData.GetAggregateListOfStatesGivenPeopleCollection(sampleData.People);
+            Assert.IsTrue(uniqueListCsvRows.Equals(aggregatedListPeople));
         }
     }
 }
