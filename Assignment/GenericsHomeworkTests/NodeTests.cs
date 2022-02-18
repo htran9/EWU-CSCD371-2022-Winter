@@ -155,6 +155,14 @@ public class NodeTests
         Assert.IsTrue(nodeList.Contains(newNode.Next.Next.Next.Next));
     }
 
+    [TestMethod]
+    public void Node_EnumeratorExists_True()
+    {
+        Node<double> newNode = DoubleRadioStations();
+        var enumerator = newNode.GetEnumerator();
+        Assert.IsNotNull(enumerator);
+    }
+
     public static Node<double> DoubleRadioStations()
     {
         Node<double> newNode = new(42.0);
