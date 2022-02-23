@@ -85,6 +85,7 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
             counter++;
             currentNode = currentNode.Next;
         } while (currentNode != Root && counter < maximum);
+        
         return children;
     }
 

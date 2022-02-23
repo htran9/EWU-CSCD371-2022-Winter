@@ -5,7 +5,8 @@ public class SampleData : ISampleData
 
 
     // 1.
-    private readonly Lazy<IEnumerable<string>> _LazyCsvRows = new Lazy<IEnumerable<string>>(() => File.ReadLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line));
+    private readonly Lazy<IEnumerable<string>> _LazyCsvRows = new Lazy<IEnumerable<string>>(
+        () => File.ReadLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line));
     public IEnumerable<string> CsvRows { get { return _LazyCsvRows.Value; } }
 
 
@@ -38,7 +39,6 @@ public class SampleData : ISampleData
     // 5.
     public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(Predicate<string> filter)
     {
-
         IEnumerable<IPerson> people = new SampleData().People;
         IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
         return result;
