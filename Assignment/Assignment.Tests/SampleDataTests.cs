@@ -44,9 +44,9 @@ namespace Assignment.Tests
         [TestMethod]
         public void GetUniqueSortedListOfStatesGivenCsvRows_AscendingOrder_IsTrue()
         {
-            IEnumerable<string> temp = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
-            IEnumerable<string> temp2 = sampleData.CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
-            Assert.IsTrue(temp.SequenceEqual(temp2));
+            IEnumerable<string> expected = sampleData.GetUniqueSortedListOfStatesGivenCsvRows();
+            IEnumerable<string> result = sampleData.CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
+            Assert.IsTrue(expected.SequenceEqual(result));
 
         }
         [TestMethod]
