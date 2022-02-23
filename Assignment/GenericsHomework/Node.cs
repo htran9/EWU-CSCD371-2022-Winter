@@ -73,7 +73,7 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
         return Convert.ToString(Value);
     }
 
-    public IEnumerable<Node<TValue>> ChildItems(int maximum) // i think this is what is needed for assignment5+6?
+    public IEnumerable<Node<TValue>> ChildItems(int maximum) 
     {
         List <Node<TValue>> children = new();
         Node<TValue> currentNode = Root;
