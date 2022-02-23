@@ -26,7 +26,7 @@ public class SampleData : ISampleData
 
 
     // 4.
-    public IEnumerable<IPerson> People => _LazyCsvRows.Value.Select(line => line.Split(','))
+    public IEnumerable<IPerson> People => CsvRows.Select(line => line.Split(','))
         .OrderBy(state => state[6])
             .ThenBy(city => city[5])
             .ThenBy(zip => zip[7])
