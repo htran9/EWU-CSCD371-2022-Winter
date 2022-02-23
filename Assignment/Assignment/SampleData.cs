@@ -6,7 +6,7 @@ public class SampleData : ISampleData
 
     // 1.
     private readonly Lazy<IEnumerable<string>> _LazyCsvRows = new Lazy<IEnumerable<string>>(
-        () => File.ReadLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1).Select(line => line));
+        () => File.ReadLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1));
     public IEnumerable<string> CsvRows { get { return _LazyCsvRows.Value; } }
 
 
