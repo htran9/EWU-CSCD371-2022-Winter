@@ -106,10 +106,10 @@ public class NodeTests
     public void NodeIterator_ReturnCorrectValues()
     {
         Node<double> newNode = DoubleRadioStations();
-        double[] stationsCorrect = new [] { 42.0, 92.9, 94.5, 103.5, 105.7 };
+        double[] stationsCorrect = new[] { 42.0, 92.9, 94.5, 103.5, 105.7 };
         double[] stationsTest = new double[5];
         int count = 0;
-        foreach(Node<double> item in newNode)
+        foreach (Node<double> item in newNode)
         {
             stationsTest[count] = item.Value;
             count++;
@@ -163,15 +163,6 @@ public class NodeTests
         Assert.IsNotNull(enumerator);
     }
 
-    [TestMethod]
-    public void NodeEnumerator()// probably need mock
-    {
-        Node<double> newNode = DoubleRadioStations();
-        var enumerator = newNode.GetEnumerator();
-        //Assert.AreEqual(0, enumerator.Current.Value);   
-
-    }
-
     public static Node<double> DoubleRadioStations()
     {
         Node<double> newNode = new(42.0);
@@ -181,6 +172,8 @@ public class NodeTests
         newNode.Append(105.7);
         return newNode;
     }
+
+
 
 
 
