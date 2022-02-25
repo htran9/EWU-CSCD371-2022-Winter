@@ -95,8 +95,6 @@ namespace Assignment.Tests
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
 
             var temp = ("Priscilla", "Jenyns");
-            Console.WriteLine(result.First().Item1);
-
             Assert.AreEqual(temp, (result.First().Item1, result.First().Item2));
         }
         [TestMethod]

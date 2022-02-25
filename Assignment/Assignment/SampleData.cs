@@ -13,9 +13,8 @@ public class SampleData : ISampleData
     // 2.
     public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows()
     {
-        return CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct();
+        return CsvRows.Select(line => line.Split(',')).Select(x => x[6]).OrderBy(x => x).Distinct().ToList();
     }
-
 
     // 3.
     public string GetAggregateSortedListOfStatesUsingCsvRows()
@@ -23,7 +22,6 @@ public class SampleData : ISampleData
         string[] state = GetUniqueSortedListOfStatesGivenCsvRows().Select(x => x).ToArray();
         return string.Join(",", state);
     }
-
 
     // 4.
     public IEnumerable<IPerson> People => CsvRows.Select(line => line.Split(','))

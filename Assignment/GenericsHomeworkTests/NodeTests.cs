@@ -172,9 +172,4 @@ public class NodeTests
         newNode.Append(105.7);
         return newNode;
     }
-
-
-
-
-
 }
