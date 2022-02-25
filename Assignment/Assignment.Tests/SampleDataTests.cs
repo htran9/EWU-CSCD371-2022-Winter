@@ -95,7 +95,7 @@ namespace Assignment.Tests
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
 
             var name = ("Priscilla", "Jenyns");
-            Assert.AreEqual(temp, (result.First().Item1, result.First().Item2));
+            Assert.AreEqual(name, (result.First().Item1, result.First().Item2));
         }
         [TestMethod]
         public void GetAggregateListOfStatesGivenPeopleCollection_EqualTo_GetUniqueListGivenCsvRows_IsTrue()
