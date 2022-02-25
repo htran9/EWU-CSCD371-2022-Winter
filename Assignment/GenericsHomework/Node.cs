@@ -6,7 +6,6 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
     public TValue Value { get; }
     public Node<TValue> Next { get; private set; }
     public Node<TValue> Root;
-
     public Node(TValue value)
     {
         Value = value;
@@ -29,7 +28,6 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
         Node<TValue> lastNode = GetLast();
         lastNode.Next = new Node<TValue>(value, Root);
     }
-
     public Node<TValue> GetLast()
     {
         Node<TValue> currentNode = Root;
@@ -67,7 +65,6 @@ public class Node<TValue> : IEnumerable<Node<TValue>>
 
         return false;
     }
-
     public override string? ToString()
     {
         return Convert.ToString(Value);

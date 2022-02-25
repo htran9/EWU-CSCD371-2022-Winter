@@ -94,7 +94,7 @@ namespace Assignment.Tests
             static bool email(string email) => email.Contains("pjenyns0@state.gov");
             IEnumerable<(string, string)> result = sampleData.FilterByEmailAddress(filter);
 
-            var temp = ("Priscilla", "Jenyns");
+            var name = ("Priscilla", "Jenyns");
             Assert.AreEqual(temp, (result.First().Item1, result.First().Item2));
         }
         [TestMethod]

@@ -2,13 +2,10 @@
 
 public class SampleData : ISampleData
 {
-
-
     // 1.
     private readonly Lazy<IEnumerable<string>> _LazyCsvRows = new Lazy<IEnumerable<string>>(
         () => File.ReadLines(@"People.csv").Where(line => !string.IsNullOrWhiteSpace(line)).Skip(1));
     public IEnumerable<string> CsvRows { get { return _LazyCsvRows.Value; } }
-
 
     // 2.
     public IEnumerable<string> GetUniqueSortedListOfStatesGivenCsvRows()
@@ -33,7 +30,6 @@ public class SampleData : ISampleData
             new Address(person[4], person[5], person[6], person[7]),
             person[3]));
 
-
     // 5.
     public IEnumerable<(string FirstName, string LastName)> FilterByEmailAddress(Predicate<string> filter)
     {
@@ -41,7 +37,6 @@ public class SampleData : ISampleData
         IEnumerable<(string FirstName, string LastName)> result = people.Where(x => filter(x.EmailAddress)).Select(name => (first: name.FirstName.Trim(), last: name.LastName.Trim()));
         return result;
     }
-
 
     // 6.
     public string GetAggregateListOfStatesGivenPeopleCollection(IEnumerable<IPerson> people)
