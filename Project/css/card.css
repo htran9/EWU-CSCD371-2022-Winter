@@ -1,0 +1,95 @@
+
+.card {
+  margin: 0;
+  padding: 0;
+
+  width: 70%;
+  height: 70%;
+}
+
+.header {
+  height: 35%;
+  background-color: white;
+  border-bottom: solid;
+  border-color: grey;
+}
+.navbar {
+  background-color: black;
+  height: 28%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+
+  margin: 0;
+  align-items: flex-end;
+}
+.ewu {
+  color: #a10022;
+  font-size: 35pt;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.menu{
+  color: white;
+  font-size: 30pt;
+  padding-right: 5px;
+}
+.image {
+  color: white;
+  font-size: 30pt;
+  padding-right: 10px;
+
+}
+.joketitle {
+  color: black;
+  font-size: 25pt;
+}
+
+.container {
+  margin-top: 10px;
+  border: solid;
+  height: 65%;
+  border-radius: 50px;
+}
+.body {
+  height: 80%;
+  border-bottom: solid;
+  
+}
+.ajoke {
+  background-color: lightgrey;
+  border-top-left-radius: 50px ;
+  border-top-right-radius: 50px ;
+  padding-left: 20px;
+  font-size: 15pt;
+  display: flex;
+  align-items: center;
+  height: 30%;
+}
+.ajoke h1 {
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  height: 19%;
+
+}
+.anotherjoke {
+  background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(11,9,121,1) 0%, rgba(23,167,212,1) 0%, rgba(25,194,228,1) 100%);
+  height: 40px;
+  width: 100px;
+  margin: 20px 5px 20px 25px;
+}
+.anotherapi {
+  background-color: lightgrey;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+}
