@@ -14,6 +14,11 @@ function writeJoke() {
         let joke = document.querySelector(".telljoke")
         joke.innerText = response.data;
       })
+      .catch(function (error) {
+        // display a message in the joke container to 
+        let joke = document.querySelector(".telljoke")
+        joke.innerText = "An error has occurred, please try again in a few moments";
+    });
   }
 }
 
