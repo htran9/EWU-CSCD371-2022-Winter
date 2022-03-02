@@ -17,26 +17,22 @@
   height: 28%;
   display: flex;
   justify-content: space-between;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-
-  margin: 0;
   align-items: flex-end;
 }
+
 .ewu {
   color: #a10022;
   font-size: 35pt;
   margin-left: 10px;
-  display: flex;
-  align-items: center;
+  height: 100%;
+  margin: 0;
 }
 .menu{
   color: white;
   font-size: 30pt;
   padding-right: 5px;
+  margin: 0;
+  height: 100%;
 }
 .image {
   color: white;
