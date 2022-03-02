@@ -9,7 +9,7 @@ function writeJoke() {
       url: 'https://geek-jokes.sameerkumar.website/api',
       responseType: 'stream'
     })
-      .then(sleeper(5000)).then(function(response) {
+      .then(sleeper(4000)).then(function(response) {
 
         let joke = document.querySelector(".telljoke")
         joke.innerText = response.data;
