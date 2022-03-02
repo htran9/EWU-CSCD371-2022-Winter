@@ -2,7 +2,7 @@
 
 var button = document.querySelector('.anotherjoke');
 writeJoke();
-function writeJoke() {
+/* function writeJoke() {
   {
     axios({
       method: 'get',
@@ -18,6 +18,20 @@ function writeJoke() {
         // display a message in the joke container to 
         let joke = document.querySelector(".telljoke")
         joke.innerText = "An error has occurred, please try again in a few moments";
+    });
+  }
+} */
+function writeJoke() {
+  {
+    fetch('https://geek-jokes.sameerkumar.website/api').then(response => response.json()).then(sleeper(4000))
+      .then(data => {
+        let joke = document.querySelector(".telljoke")
+        joke.innerHTML = data;
+    })
+    .catch(function (error) {
+        // display a message in the joke container to 
+      let joke = document.querySelector(".telljoke")
+      joke.innerText = "An error has occurred, please try again in a few moments";
     });
   }
 }
