@@ -29,12 +29,6 @@
   color: white;
   font-size: 30pt;
   padding-right: 5px;
-  height: 60%;
-
-}
-.fa-solid fa-bars {
-  color: white;
-  font-size: 30pt;
 
 }
 .joketitle {
@@ -89,6 +83,7 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
+  font-size: x-large;
 }
 button {
   border:none;
@@ -97,4 +92,15 @@ button {
 }
 button:hover, .anotherapi:hover, .anotherjoke:hover {
   color: #a10022;
+}
+
+.dropdownmenu {
+  position: relative;
+  display: inline-block;
+  background-color: aqua;
+  height: 70%;
+}
+.dropdownoption p {
+  border: solid;
+  background-color: yellow;
 }
