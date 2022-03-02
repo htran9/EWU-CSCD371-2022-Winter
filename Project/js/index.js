@@ -23,6 +23,8 @@ writeJoke();
 } */
 function writeJoke() {
   {
+    let joke = document.querySelector(".telljoke")
+    joke.innerHTML = "Loading...";
     fetch('https://geek-jokes.sameerkumar.website/api').then(response => response.json()).then(sleeper(4000))
       .then(data => {
         let joke = document.querySelector(".telljoke")
