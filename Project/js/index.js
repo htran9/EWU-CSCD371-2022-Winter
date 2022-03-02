@@ -7,7 +7,7 @@ function writeJoke() {
     axios({
       method: 'get',
       url: 'https://geek-jokes.sameerkumar.website/api',
-      responseType: 'stream'
+      responseType: 'ms-stream'
     })
       .then(sleeper(4000)).then(function(response) {
 
