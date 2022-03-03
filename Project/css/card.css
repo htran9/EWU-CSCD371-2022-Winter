@@ -111,11 +111,20 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   border-bottom-color: black;
   border-left-color: gray;
   background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
-  display: block;
+  /*display: block;
   height: 2.2em;
   width: 90%;
-  margin-left: 4%;
+  margin-left: 4%;*/
+  display: flex;
+  height: 2.2em;
+  width: 90%;
+  
   border-radius: .5em;
+  color: white;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center; 
+  
 }
 
 #drop {
@@ -124,11 +133,11 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   border: solid;
   width: 200%;
   height: 15em;
-  margin-top: 5%;
+  margin: 0em;
   padding: 0;
   right: 0;
-  text-align: center;
-  
+  display: block;
+  align-items: center;
  
 }
 .hidden {
