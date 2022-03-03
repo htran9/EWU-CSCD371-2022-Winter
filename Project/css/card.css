@@ -25,12 +25,6 @@
   font-size: 35pt;
   height: 80%;
 }
-.menu{
-  color: white;
-  font-size: 30pt;
-  padding-right: 5px;
-
-}
 .joketitle {
   color: black;
   font-size: 25pt;
@@ -94,13 +88,44 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   color: #a10022;
 }
 
-.dropdownmenu {
+.dropdown {
   position: relative;
-  display: inline-block;
-  background-color: aqua;
-  height: 70%;
+  height: 75%;
+  padding: 0;
+  margin: 0;
+
+ 
 }
-.dropdownoption p {
+.menu{
+  color: white;
+  font-size: 30pt;
+  padding-right: 5px;
+  
+
+}
+#drop p {
+
   border: solid;
   background-color: yellow;
+  display: block;
+  height: 15%;
+  width: 90%;
+  margin-left: 4%;
+  border-radius: 50px;
+}
+
+#drop {
+  position: absolute;
+  border: solid;
+  width: 200%;
+  height: 500%;
+  margin-top: 5%;
+  padding: 0;
+  right: 0;
+  text-align: center;
+  
+ 
+}
+.hidden {
+  display: none;
 }
