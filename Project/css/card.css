@@ -106,19 +106,24 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
 #drop p {
 
   border: solid;
+  border-top-color: gray;
+  border-right-color: black;
+  border-bottom-color: black;
+  border-left-color: gray;
   background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
   display: block;
-  height: 15%;
+  height: 2.2em;
   width: 90%;
   margin-left: 4%;
-  border-radius: 50px;
+  border-radius: .5em;
 }
 
 #drop {
   position: absolute;
+  background-color: white;
   border: solid;
   width: 200%;
-  height: 500%;
+  height: 15em;
   margin-top: 5%;
   padding: 0;
   right: 0;
