@@ -61,7 +61,7 @@
 
 }
 .anotherjoke {
-  background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(11,9,121,1) 0%, rgba(23,167,212,1) 0%, rgba(25,194,228,1) 100%);
+  background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
   height: 40px;
   width: 100px;
   margin: 20px 5px 20px 25px;
@@ -106,7 +106,7 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
 #drop p {
 
   border: solid;
-  background-color: yellow;
+  background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
   display: block;
   height: 15%;
   width: 90%;
