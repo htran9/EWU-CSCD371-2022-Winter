@@ -53,7 +53,7 @@ body {
   
 .dropdown-content {
     margin-top: 1em;
-    transform: translateX(-6.4em);
+    transform: translateX(-6.6em);
     display: none;
     position: absolute;
     background-color: white;
@@ -86,7 +86,7 @@ body {
     padding: 0.5em;
 }
   
-.dropdown-content a:hover {
+.dropdown-content a:hover, .anotherjoke:hover{
     color: rgb(48, 48, 48);
 }
   
@@ -120,21 +120,35 @@ body {
   .footer {
     display: flex;
     align-items: center;
-    
   
   }
   .anotherjoke {
+    color: white;
     background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgb(130, 84, 202) 100%);
-    height: 40px;
-    width: 100px;
-    margin: 20px 5px 20px 25px;
+    height: 3em;
+    width: 8em;
   }
+
+
   .anotherapi {
     background-color: lightgrey;
-    height: 40px;
-    width: 100px;
     border-radius: 5px;
+    width: 7em;
+    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
   }
+
+  .anotherapi:hover {
+    color: #a10022;
+    
+    
+  }
+
+
   .telljoke {
     height: 70%;
     display: flex;
@@ -151,17 +165,14 @@ body {
     display: inline-block;
     justify-content: left;
   }
-
-  .jokefooter{
-      padding: 0;
-      transform: translateX(-0.5em);
-  }
   
   .card footer{
-    margin: 0;
-    padding: 0;
+    padding: 1em;
     border-top: solid;
     border-color: gray;
+    display: flex;
+
+    
 
   }
 
@@ -169,6 +180,33 @@ body {
       border: solid;
       width: 70%;
   }
+
+  /* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+#tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 
 
