@@ -134,3 +134,15 @@ button:hover, .anotherapi:hover, .anotherjoke:hover, #drop button:hover {
 .hidden {
   display: none;
 }
+
+@keyframes blinkingFrames {
+  0% {opacity: 1.00;}
+  50% {opacity: 0.00;}
+  100% {opacity: 1.00;}
+}
+
+.blinking {
+  animation-name: blinkingFrames;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+}

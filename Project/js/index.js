@@ -27,7 +27,7 @@ function showMenu() {
 }
 
 // Extra Credit Button Three. Make screen disappear for 5 secs.
-var card = document.getElementById("card");
+var card = document.getElementById("buttonthree");
 function screenGone() {
   card.style.visibility = "hidden";
   setTimeout(screenBack(), 5000);
@@ -36,6 +36,16 @@ function screenBack() {
   return function() {
     card.style.visibility = "visible";
   }
+}
+
+function Blink() {
+  var blink = document.getElementById("card");
+  blink.classList.toggle("blinking");
+}
+
+function RandomButtonColor() {
+  var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.getElementById("buttonone").style.backgroundColor = '#' + randomColor;
 }
     
 
