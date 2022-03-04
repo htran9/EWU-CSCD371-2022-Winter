@@ -1,5 +1,3 @@
-
-
 var button = document.querySelector('.anotherjoke');
 writeJoke();
 /* function writeJoke() {
@@ -37,17 +35,27 @@ function writeJoke() {
     });
   }
 }
-
 button.addEventListener("click", writeJoke);
 function sleeper(ms) {
   return function(response) {
     return new Promise(resolve => setTimeout(() => resolve(response), ms));
   };
 }
-
 function showMenu() {
   var drop = document.getElementById("drop");
   drop.classList.toggle("hidden");
+}
+
+// Extra Credit Button Three. Make screen disappear for 5 secs.
+var card = document.getElementById("card");
+function screenGone() {
+  card.style.visibility = "hidden";
+  setTimeout(screenBack(), 5000);
+}
+function screenBack() {
+  return function() {
+    card.style.visibility = "visible";
+  }
 }
     
     

@@ -1,5 +1,6 @@
 
-.card {
+
+#card {
   margin: 0;
   padding: 0;
   width: 70%;
@@ -20,7 +21,6 @@
   align-items: center;
   padding: .25em;
 }
-
 .ewu {
   color: #a10022;
   font-size: 35pt;
@@ -58,7 +58,6 @@
   display: flex;
   align-items: center;
   height: 19%;
-
 }
 .anotherjoke {
   background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
@@ -84,12 +83,8 @@
   padding-left: 10px;
   font-size: x-large;
 }
-button {
-  border:none;
-  background-color:transparent;
-  outline:none;
-}
-button:hover, .anotherapi:hover, .anotherjoke:hover {
+
+button:hover, .anotherapi:hover, .anotherjoke:hover, #drop button:hover {
   color: #a10022;
 }
 
@@ -103,9 +98,12 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   color: white;
   font-size: 30pt;
   padding-right: 5px;
+  border:none;
+  background-color:transparent;
+  outline:none;
 
 }
-#drop p {
+#drop button {
   border: solid;
   border-top-color: gray;
   border-right-color: black;
@@ -113,13 +111,14 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   border-left-color: gray;
   background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
   display: flex;
-  height: 2em;
+  height: 3.2em;
   width: 90%;
-  border-radius: .5em;
+  border-radius: .7em;
   color: white;
   font-family: sans-serif;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  margin-top: 1em; 
   margin-left: auto;
   margin-right: auto;
 }
