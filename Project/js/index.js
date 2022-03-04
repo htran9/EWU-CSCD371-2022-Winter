@@ -1,24 +1,5 @@
 var button = document.querySelector('.anotherjoke');
 writeJoke();
-/* function writeJoke() {
-  {
-    axios({
-      method: 'get',
-      url: 'https://geek-jokes.sameerkumar.website/api',
-      responseType: 'ms-stream'
-    })
-      .then(sleeper(4000)).then(function(response) {
-
-        let joke = document.querySelector(".telljoke")
-        joke.innerText = response.data;
-      })
-      .catch(function (error) {
-        // display a message in the joke container to 
-        let joke = document.querySelector(".telljoke")
-        joke.innerText = "An error has occurred, please try again in a few moments";
-    });
-  }
-} */
 function writeJoke() {
   {
     let joke = document.querySelector(".telljoke")
@@ -29,7 +10,6 @@ function writeJoke() {
         joke.innerHTML = data;
     })
     .catch(function (error) {
-        // display a message in the joke container to 
       let joke = document.querySelector(".telljoke")
       joke.innerText = "An error has occurred, please try again in a few moments";
     });
@@ -58,10 +38,23 @@ function screenBack() {
   }
 }
     
-    
 
+/* function writeJoke() {
+  {
+    axios({
+      method: 'get',
+      url: 'https://geek-jokes.sameerkumar.website/api',
+      responseType: 'ms-stream'
+    })
+      .then(sleeper(4000)).then(function(response) {
 
-
-
-
-    
+        let joke = document.querySelector(".telljoke")
+        joke.innerText = response.data;
+      })
+      .catch(function (error) {
+        // display a message in the joke container to 
+        let joke = document.querySelector(".telljoke")
+        joke.innerText = "An error has occurred, please try again in a few moments";
+    });
+  }
+} */
