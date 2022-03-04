@@ -24,7 +24,6 @@
 .ewu {
   color: #a10022;
   font-size: 35pt;
-  height: 80%;
 }
 .joketitle {
   color: black;
@@ -35,7 +34,7 @@
   margin-top: 10px;
   border: solid;
   height: 65%;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 .body {
   height: 80%;
@@ -43,8 +42,8 @@
 }
 .ajoke {
   background-color: lightgrey;
-  border-top-left-radius: 50px ;
-  border-top-right-radius: 50px ;
+  border-top-left-radius: 20px ;
+  border-top-right-radius: 20px ;
   padding-left: 20px;
   font-size: 15pt;
   display: flex;
@@ -94,38 +93,30 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   height: 75%;
   padding: 0;
   margin: 0;
-
- 
 }
 .menu{
   color: white;
   font-size: 30pt;
   padding-right: 5px;
-  
 
 }
 #drop p {
-
   border: solid;
   border-top-color: gray;
   border-right-color: black;
   border-bottom-color: black;
   border-left-color: gray;
   background: linear-gradient(90deg, rgba(50,47,108,1) 0%, rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgba(25,141,228,1) 100%);
-  /*display: block;
-  height: 2.2em;
-  width: 90%;
-  margin-left: 4%;*/
   display: flex;
-  height: 2.2em;
+  height: 2em;
   width: 90%;
-  
   border-radius: .5em;
   color: white;
   font-family: sans-serif;
   justify-content: center;
   align-items: center; 
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #drop {
@@ -134,12 +125,7 @@ button:hover, .anotherapi:hover, .anotherjoke:hover {
   border: solid;
   width: 200%;
   height: 15em;
-  margin: 0em;
-  padding: 0;
-  right: 0;
-  display: block;
-  align-items: center;
- 
+  right: -.25em;
 }
 .hidden {
   display: none;
