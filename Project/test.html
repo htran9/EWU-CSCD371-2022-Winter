@@ -5,51 +5,43 @@
     <link rel="icon" type="image/x-icon" href="ewu_eagle.svg">
     <link rel="stylesheet" href="css/test.css">
     <script src="https://kit.fontawesome.com/2be03f9c83.js" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
     <div id="card">
         <header>
-            <div class="centered">
-                <div class ="navbarContent">
-                    <div class="ewu">EWU</div>
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">
-                            Menu <i class="fa-solid fa-bars"></i>
-                        </button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <button type="button" id="buttonone" onclick="RandomButtonColor();">Taste the Rainbow</button>
-                            <button type="button" id="buttontwo" onclick="Rotate()">What's Up?</button>
-                            <button type="button" id="buttonthree" onclick="screenGone();">Abracadabra</button>
-                            <button type="button" id="buttonfour" onclick="Blink()">In a land fade, fade away</button>  
-                        </div>
+            <div class ="navbarContent">
+                <div class="ewu">EWU</div>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">
+                        Menu <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <button type="button" id="buttonone" onclick="RandomButtonColor();">Taste the Rainbow</button>
+                        <button type="button" id="buttontwo" onclick="Rotate()">What's Up?</button>
+                        <button type="button" id="buttonthree" onclick="screenGone();">Abracadabra</button>
+                        <button type="button" id="buttonfour" onclick="Blink()">In a land fade, fade away</button>  
                     </div>
                 </div>
             </div>
         </header>
-
-        <body>
-            <div class="centered">
-                <div class="joketitle">
-                    <h1>The Joke Page</h1>
-                </div>
-
-            </div>
-            <div class="centered"><div class="emptyline"></div></div>
-            
-            
-            <div class="centered"><div class="container">
-                <div class="jokeBody">
-                    <div class="ajoke">
-                        <h1>A Joke</h1>
+        <div class="body">
+            <div class="joketitle">
+                <h1>The Joke Page</h1>
+                <div class="emptyline"></div>
+                <div class="container">
+                    <div class="jokeBody">
+                        <div class="ajoke">
+                            <h1>A Joke</h1>
+                        </div>
+                        <div class="telljoke"></div>  
                     </div>
-                <div class="telljoke"></div>  
-          
                 </div>
-            </body>
-
+            </div>
+        </div>
         <footer>
-                <input type="submit"class="anotherjoke" value="Another Joke">
+                <input type="submit" class="anotherjoke" value="Another Joke">
                 <a href="https://v2.jokeapi.dev/joke/Programming" target="_blank" class="anotherapi" id="tooltip">
                     Joke API<div class="tooltip">
                         <span class="tooltiptext">This shows the Joke API page</span>
@@ -57,8 +49,6 @@
                 </a>
         </footer>
     </div>
+    <script src="js/test.js"></script>
 </body>
-
-
-<script src="js/test.js"></script>
 </html>
