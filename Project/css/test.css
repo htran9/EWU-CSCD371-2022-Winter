@@ -216,6 +216,11 @@ body #card {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  opacity: 65%;
+}
+.tooltip:hover{
+  opacity: 100%;
+  cursor: default;
 }
 
 /* Tooltip text */
