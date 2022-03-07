@@ -172,7 +172,7 @@ header {
     align-items: center;
     text-decoration: none;
     color: black;
-    
+    border: solid;
     border-radius: 0.3em;
     border-top-color: black;
     border-right-color: gray;
