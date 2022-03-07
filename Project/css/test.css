@@ -8,10 +8,11 @@ body {
     height: 100vh;
 }
 /* Just added 3-4-2021 */
-body #card {
+#card {
   width: 70%;
+  display: block;
 }
-@media only screen and (max-width: 64em) {
+/* @media only screen and (max-width: 64em) {
   body #card {
     width: 100%;
   }
@@ -20,13 +21,19 @@ body #card {
   body #card {
     width: 50%;
   }
+} */
+header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
-.centered {
+/* .centered {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-}
+} */
 
 .navbarContent {
     background-color: black;
