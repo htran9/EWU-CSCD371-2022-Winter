@@ -28,13 +28,6 @@ header {
   display: flex;
   justify-content: center;
 }
-/* .centered {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-} */
-
 .navbarContent {
     background-color: black;
      /* width: 70%; */
@@ -45,7 +38,6 @@ header {
     align-items: center;
     padding: .25em;
 }
-
 .ewu {
     color: #a10022;
     font-size: 2.2em;
@@ -120,15 +112,17 @@ header {
 .show {display: block;}
 
 .container {
-    margin-top: 10px;
-    border: solid;
+  margin-top: 10px;
+  border: solid;
+  border-bottom: none;
+  height: 65%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+
+}
+  .jokebody {
     height: 65%;
     border-radius: 1em;
-    width: 100%;
-    /* width: 70%; */
-  }
-  .jokebody {
-    border-bottom: solid;
   }
   .ajoke {
     background-color: lightgrey;
@@ -145,9 +139,14 @@ header {
     padding: 0;
     margin: 0;
   }
-  .footer {
+  footer {
     display: flex;
     align-items: center;
+    border: solid;
+    border-color: black;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 1em;
   
   }
   .anotherjoke {
@@ -201,18 +200,9 @@ header {
     display: inline-block;
     justify-content: left;
   }
-  
-  #card footer{
-    padding: 1em;
-    border-top: solid;
-    border-color: gray;
-    display: flex;
-  }
-
   .emptyline {
       border: solid;
        /* width: 70%; */
-      width: 100%;
   }
 
   /* Tooltip container */
