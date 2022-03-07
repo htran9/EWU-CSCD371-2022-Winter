@@ -155,23 +155,29 @@ header {
     height: 3em;
     width: 8em;
     cursor: pointer;
+    margin: 0%;
+    padding: 0;
+    font-size: inherit;
   }
   .anotherapi {
     background-color: lightgrey;
     border-radius: 5px;
-    width: 7em;
+    width: 8em;
     margin-left: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: black;
-    border: solid;
+    
     border-radius: 0.3em;
     border-top-color: black;
     border-right-color: gray;
     border-bottom-color: gray;
     border-left-color: black;
+    padding: 0;
+    height: 3em;
+  
   }
 
   .tooltiptext {
