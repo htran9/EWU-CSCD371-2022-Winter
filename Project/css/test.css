@@ -230,7 +230,7 @@ body #card {
   padding: 5px 0;
   border-radius: 6px;
   opacity: 0;
-  transition: all 2s ease-out;
+  /*transition: all 1s ease-out;*/
  
   /* Position the tooltip text - see examples below! */
   position: absolute;
@@ -242,7 +242,7 @@ body #card {
   
   visibility: visible;
   opacity: 1;
-  transition: all 2s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 /* Extra Credit Portion */
