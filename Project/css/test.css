@@ -128,7 +128,7 @@ header {
     background-color: lightgrey;
     border-top-left-radius: 0.75em;
     border-top-right-radius: 0.75em;
-    padding-left: 20px;
+    padding: 1em;
     margin: 0;
     font-size: large;
     display: flex;
@@ -143,7 +143,11 @@ header {
     display: flex;
     align-items: center;
     border: solid;
-    border-color: black;
+    border-left-color: black;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: gray;
+    
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     padding: 1em;
@@ -161,7 +165,6 @@ header {
   }
   .anotherapi {
     background-color: lightgrey;
-    border-radius: 5px;
     width: 8em;
     margin-left: 1em;
     display: flex;
@@ -207,7 +210,7 @@ header {
     justify-content: left;
   }
   .emptyline {
-      border: solid;
+    border-top-style: groove;
        /* width: 70%; */
   }
 
