@@ -1,13 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    /* display: block; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-/* Just added 3-4-2021 */
 #card {
   width: 70%;
   display: block;
@@ -30,7 +28,6 @@ header {
 }
 .navbarContent {
     background-color: black;
-     /* width: 70%; */
     width: 100%;
     height: 2.5em;
     display: flex;
@@ -58,12 +55,6 @@ header {
 .dropbtn > i {
     pointer-events: none;
 }
-  
-  /* menu button with a hover/focus effect*/
-  /*.dropbtn:hover, .dropbtn:focus {
-    color: #a10022;
-  }*/
-  
 .dropdown {
     position: relative;
     display: inline-block;
@@ -72,7 +63,6 @@ header {
 .dropdown-content {
     margin-top: 1em;
     transform: translateX(-6.6em);
-    display: none;
     position: absolute;
     background-color: white;
     border: solid;
@@ -82,6 +72,17 @@ header {
     min-width: 15em;
     z-index: 1;
     padding-block: 0.25em;
+    visibility: hidden;
+    transition: all 2s ease-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.show {
+  display: block;
+  visibility: visible;
+  max-height: 250px;
+  opacity: 1;
 }
   
 .dropdown-content button {
@@ -109,7 +110,6 @@ header {
 .dropdown-content a:hover, .anotherjoke:hover{
     color: rgb(48, 48, 48);
 } 
-.show {display: block;}
 
 .container {
   margin-top: 10px;
@@ -150,8 +150,6 @@ header {
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     padding: 1em;
-  
-  
   }
   .anotherjoke {
     color: white;
@@ -181,7 +179,6 @@ header {
     border-bottom-color: gray;
     border-left-color: black;
     box-sizing: border-box
-  
   }
 
   .tooltiptext {
@@ -191,9 +188,7 @@ header {
   .anotherapi:hover {
     color: #a10022;    
   }
-
   .telljoke {
-     /* width: 70%; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -205,28 +200,25 @@ header {
 
   .joketitle {
     font-size: x-large;
-     /* width: 70%; */
     width: 100%;
     display: inline-block;
     justify-content: left;
   }
   .emptyline {
     border-top-style: groove;
-       /* width: 70%; */
   }
 
   /* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted black;
   opacity: 65%;
 }
 .tooltip:hover{
   opacity: 100%;
   cursor: default;
 }
-
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -237,22 +229,18 @@ header {
   padding: 5px 0;
   border-radius: 6px;
   opacity: 0;
-  /*transition: all 1s ease-out;*/
- 
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 #tooltip:hover .tooltiptext {
-  
   visibility: visible;
   opacity: 1;
   transition: all 0.5s ease-in;
 }
 
-/* Extra Credit Portion */
+/* Extra Credit Portion Below */
 @keyframes blinkingFrames {
   0% {opacity: 1.00;}
   50% {opacity: 0.00;}

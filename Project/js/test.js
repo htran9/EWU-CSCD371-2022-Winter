@@ -1,20 +1,7 @@
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-  
-  // Close the dropdown if the user clicks outside of it
-/*   window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-} */
 
 var button = document.querySelector('.anotherjoke');
 writeJoke();
@@ -53,7 +40,7 @@ function screenBack() {
   }
 }
 // Extra credit to make Card fade in and out when Button 4 is pressed.
-function Blink() {
+function Magic() {
   var blink = document.getElementById("card");
   blink.classList.toggle("blinking");
 }
@@ -71,3 +58,4 @@ function Rotate() {
   var rotate = document.getElementById("buttontwo");
   rotate.classList.toggle("rotate");
 }
+
