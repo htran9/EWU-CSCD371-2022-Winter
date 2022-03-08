@@ -100,9 +100,9 @@ header {
     width: 90%;
     cursor: pointer;
 } 
-.dropdown-content button:hover, .anotherjoke:hover{
+.dropdown-content button:hover, .anotherjoke:hover {
     color: rgb(48, 48, 48);
-} 
+}
 .container {
   margin-top: 10px;
   border: solid;
@@ -176,7 +176,7 @@ header {
     bottom: .5em;
     right: -8.5em;
   }
-  .anotherapi:hover {
+  .anotherapi:hover, .dropbtn:hover {
     color: #a10022;    
   }
   .telljoke {
