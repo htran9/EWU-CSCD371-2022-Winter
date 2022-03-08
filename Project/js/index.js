@@ -40,21 +40,21 @@ function screenBack() {
   }
 }
 // Extra credit to make Card fade in and out when Button 4 is pressed.
-function Magic() {
+function magic() {
   var blink = document.getElementById("card");
   blink.classList.toggle("blinking");
 }
 
 // Change the background color when Button 1 is clicked.
-function RandomButtonColor() {
+function randomButtonColor() {
   let colors = ["#ffd0d2","#fffdd0","#d0fffd","#d0d2ff"];
   document.getElementsByTagName('body')[0].style.background = "linear-gradient(90deg, "+colors[randomNumber(0,4)]+" "+"50%, "+colors[randomNumber(0,4)] + ")";
 }
-function randomNumber(min,max){
+function randomNumber(min,max) {
   return Math.floor((Math.random() * max) + min);
 }
 // Make the button turn upside down.
-function Rotate() {
+function rotate() {
   var rotate = document.getElementById("buttontwo");
   rotate.classList.toggle("rotate");
 }

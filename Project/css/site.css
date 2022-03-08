@@ -70,7 +70,7 @@ header {
     z-index: 1;
     padding-block: 0.25em;
     visibility: hidden;
-    transition: all 1.5s ease-out;
+    transition: all 1.5s ease-in;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
