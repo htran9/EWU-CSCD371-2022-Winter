@@ -40,7 +40,6 @@ header {
     font-size: 2.2em;
     padding-left: .25em;
 }
-
 .dropbtn {
     color: white;
     background-color: black;
@@ -50,7 +49,6 @@ header {
     border: none;
     cursor: pointer;
 }
-
 /* allows you to click on the icon withtin <i></i> */
 .dropbtn > i {
     pointer-events: none;
@@ -58,8 +56,7 @@ header {
 .dropdown {
     position: relative;
     display: inline-block;
-}
-  
+} 
 .dropdown-content {
     margin-top: 1em;
     transform: translateX(-6.6em);
@@ -73,7 +70,7 @@ header {
     z-index: 1;
     padding-block: 0.25em;
     visibility: hidden;
-    transition: all 2s ease-out;
+    transition: all 1.5s ease-out;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -83,8 +80,7 @@ header {
   visibility: visible;
   max-height: 250px;
   opacity: 1;
-}
-  
+}  
 .dropdown-content button {
     border: solid;
     border-radius: 0.25em;
@@ -96,8 +92,6 @@ header {
         rgba(50,47,108,1) 0%,rgba(3,144,142,1) 0%, rgba(23,167,212,1) 50%, rgb(130, 84, 202) 100%);
     color: white;
     font-family: sans-serif;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
     display: block;
     margin-inline: 0.9em;
@@ -105,12 +99,10 @@ header {
     padding: 0.5em;
     width: 90%;
     cursor: pointer;
-}
-  
-.dropdown-content a:hover, .anotherjoke:hover{
+} 
+.dropdown-content button:hover, .anotherjoke:hover{
     color: rgb(48, 48, 48);
 } 
-
 .container {
   margin-top: 10px;
   border: solid;
@@ -118,7 +110,6 @@ header {
   height: 65%;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
-
 }
   .jokebody {
     height: 65%;
@@ -197,12 +188,10 @@ header {
     padding-bottom: 1em;
     font-size: large;
   }
-
   .joketitle {
     font-size: x-large;
     width: 100%;
     display: inline-block;
-    justify-content: left;
   }
   .emptyline {
     border-top-style: groove;
@@ -232,21 +221,18 @@ header {
   position: absolute;
   z-index: 1;
 }
-
 /* Show the tooltip text when you mouse over the tooltip container */
 #tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
   transition: all 0.5s ease-in;
 }
-
 /* Extra Credit Portion Below */
 @keyframes blinkingFrames {
   0% {opacity: 1.00;}
   50% {opacity: 0.00;}
   100% {opacity: 1.00;}
 }
-
 .blinking {
   animation-name: blinkingFrames;
   animation-duration: 10s;
