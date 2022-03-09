@@ -4,19 +4,26 @@ function myFunction() {
 }
 
 var button = document.querySelector('.anotherjoke');
+let tellJoke = document.querySelector(".telljoke")
 writeJoke();
 function writeJoke() {
   {
-    let joke = document.querySelector(".telljoke")
-    joke.innerHTML = "Loading...";
-    fetch('https://geek-jokes.sameerkumar.website/api').then(response => response.json()).then(sleeper(4000))
+    tellJoke.innerHTML = "Loading...";
+    fetch('https://v2.jokeapi.dev/joke/Programming').then(response => {
+      if (!response.ok) {
+          throw new Error();
+      }
+      return response.json();
+      }).then(sleeper(4000))
       .then(data => {
-        let joke = document.querySelector(".telljoke")
-        joke.innerHTML = data;
+        if(data['type'] == "single") {
+          tellJoke.innerHTML = data['joke'];
+        }else {
+          tellJoke.innerHTML = data['setup'] + "<br>" + data['delivery'];
+        }
     })
     .catch(function (error) {
-      let joke = document.querySelector(".telljoke")
-      joke.innerText = "An error has occurred, please try again in a few moments";
+      tellJoke.innerText = "An error has occurred, please try again in a few moments";
     });
   }
 }
