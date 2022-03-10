@@ -179,7 +179,8 @@ header {
   .anotherapi:hover, .dropbtn:hover {
     color: #a10022;    
   }
-  .telljoke {
+  .telljoke,
+  .telljoke2 {
     height: 100%;
     display: flex;
     align-items: center;
